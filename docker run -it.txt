@@ -1,0 +1,10 @@
+docker run -it \
+    --device /dev/kvm \
+    -p 50922:10022 \
+    -e "DISPLAY=${DISPLAY:-:0.0}" \
+    -v /mnt/wslg/.X11-unix:/tmp/.X11-unix \
+    -e GENERATE_UNIQUE=true \
+    -e MASTER_PLIST_URL='https://yammigo.github.io/yammigo/config-custom.plist' \
+    registry.cn-hangzhou.aliyuncs.com/shrimp-images/docker-osx:ventura
+
+
